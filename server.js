@@ -27,7 +27,7 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  res.render('contact', { layout: 'dark' });
+  res.render('contact');
 });
 
 app.get('/info', (req, res) => {
@@ -42,9 +42,9 @@ app.post('/contact/send-message', (req, res) => {
   const { author, sender, title, message } = req.body;
 
   if (author && sender && title && message) {
-    res.send('The message has been sent!');
+    res.render('contact', { isSent: true });
   } else {
-    res.send("You can't leave fields empty!");
+    res.render('contact', { isError: true });
   }
 });
 
