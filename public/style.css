@@ -119,3 +119,14 @@ button {
     opacity: 1;
   }
 }
+
+/* Image preview */
+
+.image-box {
+  display: block;
+  width: 200px;
+}
+
+.img-box img {
+  width: 200px;
+}
