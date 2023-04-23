@@ -12,6 +12,12 @@
   </div>
 {{/if}}
 
+    {{#if fileName}}
+    <div>
+        <img src="/uploads/{{fileName}}">
+    </div>
+    {{/if}}
+
 <form
   action='/contact/send-message'
   method='POST'
@@ -28,6 +34,9 @@
   <label>
     Title:
     <input type='text' name='title' />
+  </label>
+  <label>
+            File: <input type="file" name="image" accept="image/png, image/gif, image/jpeg, image/jpg"></input>
   </label>
   <label>
     Message:
