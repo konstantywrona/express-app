@@ -11,6 +11,7 @@ app.engine(
 );
 
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
   res.render('index');
@@ -34,6 +35,10 @@ app.get('/info', (req, res) => {
 
 app.get('/history', (req, res, next) => {
   res.render('history');
+});
+
+app.post('/contact/send-message', (req, res) => {
+  res.json(req.body);
 });
 
 app.use((req, res) => {
